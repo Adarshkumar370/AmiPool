@@ -5,7 +5,14 @@
     android:fillAfter="true">
 
     <translate
-        android:fromYDelta="75%p"
+        android:interpolator="@android:anim/accelerate_interpolator"
+        android:fromYDelta="0%p"
         android:toYDelta="-20%p"
         android:duration="800" />
+    <alpha
+        android:interpolator="@android:anim/accelerate_interpolator"
+        android:fromAlpha="0.0"
+        android:toAlpha="1.0"
+        android:duration="500"
+        />
 </set>
