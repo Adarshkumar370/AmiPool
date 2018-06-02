@@ -12,9 +12,9 @@ public class splash_screen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.startup_screen);
-        logo=(ImageView)findViewById(R.id.Logo);
-        Animation b=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
-        logo.startAnimation(b);
+//        logo= findViewById(R.id.Logo);
+//        Animation b=AnimationUtils.loadAnimation(getApplicationContext(),R.anim.move);
+//        logo.startAnimation(b);
 
     }
 }

@@ -8,7 +8,7 @@
         android:interpolator="@android:anim/accelerate_interpolator"
         android:fromYDelta="0%p"
         android:toYDelta="-20%p"
-        android:duration="800" />
+        android:duration="300" />
     <alpha
         android:interpolator="@android:anim/accelerate_interpolator"
         android:fromAlpha="0.0"
