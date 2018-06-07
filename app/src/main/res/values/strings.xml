@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">AmiPool</string>
     <string name="app_logo">AmiPool Logo</string>
+    <string name="app_tagLine">It\'s cool to Pool</string>
+    <string name="login">Login</string>
+    <string name="signup">SignUp</string>
+    <string name="login_hint_username">Student Email or Phone No.</string>
+    <string name="login_hint_password">Password</string>
 </resources>
