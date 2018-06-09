@@ -8,13 +8,14 @@
 
     <ImageView
         android:id="@+id/Logo"
-        android:layout_width="252dp"
-        android:layout_height="252dp"
+        android:layout_width="256dp"
+        android:layout_height="256dp"
         android:layout_marginEnd="16dp"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:contentDescription="@string/app_logo"
         android:scaleType="centerCrop"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -29,6 +30,7 @@
         android:textAlignment="center"
         android:textColor="@android:color/primary_text_dark"
         android:textSize="30sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toTopOf="@+id/tagLine"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -44,6 +46,23 @@
         android:textAllCaps="false"
         android:textColor="@android:color/secondary_text_dark"
         android:textSize="14sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/next"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/next"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#7f05728f"
+        android:fontFamily="serif"
+        android:requiresFadingEdge="horizontal|vertical"
+        android:text="@string/next"
+        android:textAllCaps="false"
+        android:textColor="@android:color/white"
+        android:textSize="20sp"
+        android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

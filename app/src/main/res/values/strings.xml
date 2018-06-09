@@ -2,8 +2,19 @@
     <string name="app_name">AmiPool</string>
     <string name="app_logo">AmiPool Logo</string>
     <string name="app_tagLine">It\'s cool to Pool</string>
+    <string name="next">Next</string>
+    <string name="back">Back</string>
     <string name="login">Login</string>
     <string name="signup">SignUp</string>
     <string name="login_hint_username">Student Email or Phone No.</string>
     <string name="login_hint_password">Password</string>
+    <string name="title_activity_login_signup">login_signup</string>
+    <string name="tab_text_1">Tab 1</string>
+    <string name="tab_text_2">Tab 2</string>
+    <string name="tab_text_3">Tab 3</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="email">Email</string>
+    <string name="no_account_yet">No account yet?</string>
+    <string name="create_one"> Create One</string>
 </resources>
