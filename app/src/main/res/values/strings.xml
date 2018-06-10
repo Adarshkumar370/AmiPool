@@ -17,4 +17,6 @@
     <string name="email">Email</string>
     <string name="no_account_yet">No account yet?</string>
     <string name="create_one"> Create One</string>
+    <string name="amity_email_id">Amity Email id</string>
+    <string name="already_a_member">Already a member?</string>
 </resources>
