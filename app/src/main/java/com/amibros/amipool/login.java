@@ -115,8 +115,11 @@ public class login extends AppCompatActivity implements GestureDetector.OnGestur
         inputPassword = findViewById(R.id.input_password);
         boolean checke = emailCheck(inputEmail.getText().toString());
         boolean checkp = passwordcheck(inputPassword.getText().toString());
-        if (checke && checkp)
+        if (checke && checkp) {
             Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show(); // Replace with JSON READER
+            Intent map = new Intent(login.this, passengerScreen.class);
+            startActivity(map);
+        }
         else
             Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();// error msg float window
     }
