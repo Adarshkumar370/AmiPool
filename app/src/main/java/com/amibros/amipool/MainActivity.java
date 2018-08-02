@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
 
                 return false;
                 }
+
         });
 
     }
