@@ -10,7 +10,6 @@
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.INTERNET" />
 
-
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -45,7 +44,8 @@
 
         <activity
             android:name=".passengerScreen"
-            android:label="@string/title_activity_passenger_screen"></activity>
+            android:label="@string/title_activity_passenger_screen"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

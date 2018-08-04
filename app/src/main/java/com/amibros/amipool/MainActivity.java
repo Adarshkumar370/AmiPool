@@ -62,6 +62,8 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Intent intent = new Intent(MainActivity.this, passengerScreen.class);
+        startActivity(intent);
         logo = findViewById(R.id.Logo);
         appname = findViewById(R.id.ss_appname);
         tagLine = findViewById(R.id.tagLine);
