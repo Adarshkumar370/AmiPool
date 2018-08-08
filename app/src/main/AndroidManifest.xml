@@ -21,11 +21,13 @@
         <activity
             android:name=".MainActivity"
             android:noHistory="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+             <intent-filter>
+             <action android:name="android.intent.action.MAIN" />
+
+
+             <category android:name="android.intent.category.LAUNCHER" />
+             </intent-filter>
         </activity>
         <activity android:name=".login" />
         <activity android:name=".signup" />
@@ -45,7 +47,9 @@
         <activity
             android:name=".passengerScreen"
             android:label="@string/title_activity_passenger_screen"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/AppTheme" />
+        <activity android:name=".driver_activity"></activity>
+        <activity android:name=".passenger_activity"></activity>
     </application>
 
 </manifest>
