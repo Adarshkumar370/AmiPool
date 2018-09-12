@@ -1,0 +1,63 @@
+{
+  "project_info": {
+    "project_number": "810587777949",
+    "firebase_url": "https://amipool-b5954.firebaseio.com",
+    "project_id": "amipool-b5954",
+    "storage_bucket": "amipool-b5954.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:810587777949:android:f7a4ec78b91cc5e2",
+        "android_client_info": {
+          "package_name": "com.amibros.amipool"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "810587777949-vlupia0tjiph4obviaulffuloergt7ko.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amibros.amipool",
+            "certificate_hash": "96d8d72cbb57e5aaa357bc323570a620b185a9a6"
+          }
+        },
+        {
+          "client_id": "810587777949-6iodous49r8ptqphhshogmdlde7gnq3g.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.amibros.amipool",
+            "certificate_hash": "d90c034fb8d2454437cc753458ddd80ab4cfe79d"
+          }
+        },
+        {
+          "client_id": "810587777949-f4j7hdutp5v1mtab1u88d3mjunl4jtvd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCWSZRpvbTxBzFPmCg1gSrhpZsgWq4uWDA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "810587777949-f4j7hdutp5v1mtab1u88d3mjunl4jtvd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

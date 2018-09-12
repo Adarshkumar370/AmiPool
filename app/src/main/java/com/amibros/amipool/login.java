@@ -1,10 +1,11 @@
 package com.amibros.amipool;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
+import android.support.annotation.NonNull;
 import android.support.v4.view.GestureDetectorCompat;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -12,6 +13,11 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.auth.AuthResult;
+import com.google.firebase.auth.FirebaseAuth;
 
 public class login extends AppCompatActivity implements GestureDetector.OnGestureListener {
 
@@ -21,6 +27,9 @@ public class login extends AppCompatActivity implements GestureDetector.OnGestur
     private EditText inputPassword;
     private TextView link_signup;
     private boolean exit = false;
+    private FirebaseAuth mAuth;
+// ...
+
 
     public void init() {
 
@@ -40,6 +49,7 @@ public class login extends AppCompatActivity implements GestureDetector.OnGestur
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+        mAuth = FirebaseAuth.getInstance();
         detector = new GestureDetectorCompat(this, this);
         init();
     }
@@ -112,19 +122,30 @@ public class login extends AppCompatActivity implements GestureDetector.OnGestur
     public void loginCheck(View view) {
         loginButton = findViewById(R.id.btn_signup);
         inputEmail = findViewById(R.id.input_email);
+        String email = inputEmail.getText().toString().trim().toLowerCase();
         inputPassword = findViewById(R.id.input_password);
+        String password = inputPassword.getText().toString().trim().toLowerCase();
         boolean checke = emailCheck(inputEmail.getText().toString());
         boolean checkp = passwordcheck(inputPassword.getText().toString());
         if (checke && checkp) {
-            Toast.makeText(this, "Login Successful", Toast.LENGTH_SHORT).show(); // Replace with JSON READER
-            Intent map = new Intent(login.this, passengerScreen.class);
-            startActivity(map);
+            mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                @Override
+                public void onComplete(@NonNull Task<AuthResult> task) {
+                    if (task.isSuccessful()) {
+                        Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show(); // Replace with JSON READER
+                        Intent map = new Intent(login.this, passengerScreen.class);
+                        startActivity(map);
+                    } else {
+                        Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }
+
+            });
+
         }
-        else
-            Toast.makeText(this, "Failed", Toast.LENGTH_SHORT).show();// error msg float window
     }
 
-    private final boolean emailCheck(String s) {
+    private boolean emailCheck(String s) {
         s = s.toLowerCase();
         s = s.trim();
         boolean d = false;
