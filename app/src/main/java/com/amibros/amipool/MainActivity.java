@@ -62,8 +62,9 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-//        Intent intent = new Intent(MainActivity.this, passengerScreen.class);
-//        startActivity(intent);
+
+        Intent intent = new Intent(MainActivity.this, passengerScreen.class);
+        startActivity(intent);
         logo = findViewById(R.id.Logo);
         appname = findViewById(R.id.ss_appname);
         tagLine = findViewById(R.id.tagLine);
@@ -127,6 +128,7 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     @Override
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         if (e1.getX() - e2.getX() > 50) {
+
             Intent intent = new Intent(MainActivity.this, login.class);
             startActivity(intent);
             overridePendingTransition(R.anim.enter, R.anim.exit);

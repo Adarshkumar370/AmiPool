@@ -127,22 +127,29 @@ public class login extends AppCompatActivity implements GestureDetector.OnGestur
         String password = inputPassword.getText().toString().trim().toLowerCase();
         boolean checke = emailCheck(inputEmail.getText().toString());
         boolean checkp = passwordcheck(inputPassword.getText().toString());
+        loginButton.setEnabled(false);
         if (checke && checkp) {
             mAuth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show(); // Replace with JSON READER
-                        Intent map = new Intent(login.this, passengerScreen.class);
+                        Intent map = new Intent(login.this, Select_View.class);
+
                         startActivity(map);
                     } else {
                         Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
+                        loginButton.setEnabled(true);
+
                     }
                 }
 
+
             });
 
-        }
+        } else
+            loginButton.setEnabled(true);
+
     }
 
     private boolean emailCheck(String s) {
@@ -183,9 +190,6 @@ public class login extends AppCompatActivity implements GestureDetector.OnGestur
             inputPassword.requestFocus();
             return false;
 
-                   /*
-                replace it later with proper logic
-                */
         }
 
     }
