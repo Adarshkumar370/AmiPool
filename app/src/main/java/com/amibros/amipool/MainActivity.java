@@ -27,9 +27,13 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
         next.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
-                Intent intent = new Intent(MainActivity.this, login.class);
-                startActivity(intent);
+                if (ApplicationSessionStorage.GetSessionData("isAlreadyLoggedIn").equals("true")) {
+                    Intent intent1 = new Intent(MainActivity.this, Select_View.class);
+                    startActivity(intent1);
+                } else {
+                    Intent intent = new Intent(MainActivity.this, login.class);
+                    startActivity(intent);
+                }
                 overridePendingTransition(R.anim.enter, R.anim.exit);
             }
         });
@@ -62,9 +66,9 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-        Intent intent = new Intent(MainActivity.this, passengerScreen.class);
-        startActivity(intent);
+//
+//        Intent intent = new Intent(MainActivity.this, passengerScreen.class);
+//        startActivity(intent);
         logo = findViewById(R.id.Logo);
         appname = findViewById(R.id.ss_appname);
         tagLine = findViewById(R.id.tagLine);
@@ -129,8 +133,13 @@ public class MainActivity extends AppCompatActivity implements GestureDetector.O
     public boolean onFling(MotionEvent e1, MotionEvent e2, float velocityX, float velocityY) {
         if (e1.getX() - e2.getX() > 50) {
 
-            Intent intent = new Intent(MainActivity.this, login.class);
-            startActivity(intent);
+            if (ApplicationSessionStorage.GetSessionData("isAlreadyLoggedIn").equals("true")) {
+                Intent intent1 = new Intent(MainActivity.this, Select_View.class);
+                startActivity(intent1);
+            } else {
+                Intent intent = new Intent(MainActivity.this, login.class);
+                startActivity(intent);
+            }
             overridePendingTransition(R.anim.enter, R.anim.exit);
             return true;
         }

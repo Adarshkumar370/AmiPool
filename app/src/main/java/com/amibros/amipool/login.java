@@ -134,8 +134,8 @@ public class login extends AppCompatActivity implements GestureDetector.OnGestur
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
                         Toast.makeText(getApplicationContext(), "Login Successful", Toast.LENGTH_SHORT).show(); // Replace with JSON READER
+                        ApplicationSessionStorage.SetSessionData("isAlreadyLoggedIn", "true");
                         Intent map = new Intent(login.this, Select_View.class);
-
                         startActivity(map);
                     } else {
                         Toast.makeText(getApplicationContext(), task.getException().getMessage(), Toast.LENGTH_LONG).show();
@@ -178,7 +178,8 @@ public class login extends AppCompatActivity implements GestureDetector.OnGestur
         }
     }
 
-    private final boolean passwordcheck(String p) { /*
+    private final boolean passwordcheck(String p) {
+            /*
             replace it later with proper logic
             */
 
